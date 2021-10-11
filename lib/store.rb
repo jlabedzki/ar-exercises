@@ -1,4 +1,6 @@
 class Store < ActiveRecord::Base
+  has_many :employees
+  
   validates :name, presence: true, length: {minimum: 3}
   validates :annual_revenue, numericality: {greater_than_or_equal_to: 0}
   validate :must_carry_clothing
@@ -11,5 +13,4 @@ class Store < ActiveRecord::Base
     end
   end
 
-  has_many :employees
 end
