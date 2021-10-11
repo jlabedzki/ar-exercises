@@ -30,5 +30,5 @@ yaletown = Store.create(
 
 @mens_stores = Store.where(mens_apparel: true)
 @mens_stores.each { |store| puts store.name }
-@womens_apparel_under1000000 = Store.where(womens_apparel: true, annual_revenue: -Float::INFINITY...1000000)
+@womens_apparel_under1000000 = Store.where("womens_apparel = true AND annual_revenue < 1000000")
 @womens_apparel_under1000000.each { |store| puts store.name }
