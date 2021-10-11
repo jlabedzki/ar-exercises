@@ -1,5 +1,7 @@
 class Employee < ActiveRecord::Base
-  valides :first_name, presence: true
-  valides :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :hourly_rate, numericality: {only_integer: true}
+  validates :store, presence: true
   belongs_to :store
 end
